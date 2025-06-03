@@ -1,0 +1,19 @@
+taskflow_backend/
+├── manage.py
+├── taskflow_backend/        # settings, urls, wsgi
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── tasks/                   # app หลักของเรา
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py            # class Task
+│   ├── serializers.py       # แปลง model เป็น JSON
+│   ├── urls.py              # route API เช่น /api/tasks/
+│   ├── views.py             # logic การตอบ API
+│   └── tests.py
+├── requirements.txt
+├── .env                     # config เช่น DB_PASSWORD
+└── Dockerfile (ภายหลัง)
