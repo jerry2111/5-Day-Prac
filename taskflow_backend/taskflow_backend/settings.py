@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # ทำให้ Django รู้จัก REST API tools เช่น serializer, viewset ฯลฯ
     'tasks',           # ทำให้ Django โหลด app ที่เราจะเขียน logic เช่น models, views, URLs
+    
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
