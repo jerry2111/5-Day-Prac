@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # ทำให้ Django รู้จัก REST API tools เช่น serializer, viewset ฯลฯ
     'tasks',           # ทำให้ Django โหลด app ที่เราจะเขียน logic เช่น models, views, URLs
-    
+    'drf_spectacular',  # สำหรับการสร้าง OpenAPI schema
 ]
 
 MIDDLEWARE = [
@@ -77,10 +77,15 @@ WSGI_APPLICATION = 'taskflow_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'todo_db',
+        'USER': 'todo_user',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -124,4 +129,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
